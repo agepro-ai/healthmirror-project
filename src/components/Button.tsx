@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from 'lucide-react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   withArrow?: boolean;
   fullWidth?: boolean;
+  glow?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,19 +18,21 @@ const Button: React.FC<ButtonProps> = ({
   size = 'md',
   withArrow = false,
   fullWidth = false,
+  glow = false,
   ...props
 }) => {
   const variants = {
     primary: 'bg-primary text-white hover:bg-primary/90 shadow-sm',
     secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-    outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-    ghost: 'hover:bg-accent hover:text-accent-foreground'
+    outline: 'border border-input bg-background/50 backdrop-blur-sm hover:bg-accent/10 hover:text-accent-foreground transition-colors',
+    ghost: 'hover:bg-accent/10 hover:text-accent-foreground',
+    accent: 'bg-accent text-white hover:bg-accent/90 shadow-sm'
   };
 
   const sizes = {
-    sm: 'h-8 rounded-md px-3 text-xs',
-    md: 'h-10 rounded-md px-4 py-2',
-    lg: 'h-12 rounded-md px-6 py-3 text-lg'
+    sm: 'h-8 rounded-xl px-3 text-xs',
+    md: 'h-10 rounded-xl px-4 py-2',
+    lg: 'h-12 rounded-xl px-6 py-3 text-lg'
   };
 
   return (
@@ -39,6 +42,7 @@ const Button: React.FC<ButtonProps> = ({
         variants[variant],
         sizes[size],
         fullWidth && 'w-full',
+        glow && 'shadow-[0_0_15px_rgba(var(--primary)/30)]',
         className
       )}
       {...props}

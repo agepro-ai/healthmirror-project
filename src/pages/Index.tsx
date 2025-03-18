@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
 import Button from '@/components/Button';
+import { Check, ShieldCheck } from 'lucide-react';
 
 const Index = () => {
   // Smooth scrolling for anchor links
@@ -43,152 +44,194 @@ const Index = () => {
       <Testimonials />
       
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 md:py-28">
+      <section id="pricing" className="py-20 md:py-28 bg-gradient-to-b from-white to-secondary/50">
         <div className="container-custom">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <div className="badge bg-blue-100 text-blue-800 mb-4">
+            <div className="badge bg-accent/10 text-accent mb-4 backdrop-blur-sm">
               Pricing
             </div>
             <h2 className="heading-xl mb-6">
-              Simple, Transparent Pricing
+              Invest in <span className="text-primary">Preventive</span> Health
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Choose the plan that's right for you and start monitoring your health with precision.
+              Choose your preventive health monitoring plan and start detecting potential health issues weeks before symptoms appear.
             </p>
           </AnimatedSection>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimatedSection 
-              delay="0" 
-              className="bg-white border rounded-xl p-6 hover:shadow-md transition-shadow"
+              delay="none" 
+              className="futuristic-card group hover:border-primary/20 transition-all duration-300"
             >
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2">Basic</h3>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold">$9</span>
-                  <span className="text-gray-500 ml-2">/month</span>
+              <div className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Essential</h3>
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-bold">$29</span>
+                    <span className="text-gray-500 ml-2">/month</span>
+                  </div>
                 </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Core health monitoring</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>30-day data history</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Weekly prediction reports</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Basic prevention protocols</span>
+                  </li>
+                </ul>
+                <Button variant="outline" fullWidth>
+                  Get Started
+                </Button>
               </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Basic health tracking</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>30-day data history</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Weekly health reports</span>
-                </li>
-              </ul>
-              <Button variant="outline" fullWidth>
-                Get Started
-              </Button>
+              <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
             </AnimatedSection>
             
             <AnimatedSection 
               delay="200" 
-              className="bg-white border-2 border-blue-500 rounded-xl p-8 shadow-lg relative md:transform md:scale-105 md:-translate-y-2"
+              className="futuristic-border p-1 rounded-2xl relative md:transform md:scale-105 md:-translate-y-2"
             >
               <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                <div className="badge bg-blue-500 text-white">
+                <div className="badge bg-accent text-white">
                   Most Popular
                 </div>
               </div>
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2">Premium</h3>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold">$19</span>
-                  <span className="text-gray-500 ml-2">/month</span>
+              <div className="futuristic-card h-full">
+                <div className="p-8">
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Advanced</h3>
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold">$79</span>
+                      <span className="text-gray-500 ml-2">/month</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>Comprehensive monitoring</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>1-year data history</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>Daily prediction updates</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>Personalized prevention protocols</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>Human health specialist review</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="text-accent mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                      <span>Priority support</span>
+                    </li>
+                  </ul>
+                  <Button fullWidth glow>
+                    Get Started
+                  </Button>
                 </div>
+                <div className="h-1 w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
               </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Advanced health metrics</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>1-year data history</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Daily health insights</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Personalized recommendations</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Priority support</span>
-                </li>
-              </ul>
-              <Button fullWidth>
-                Get Started
-              </Button>
             </AnimatedSection>
             
             <AnimatedSection 
               delay="400" 
-              className="bg-white border rounded-xl p-6 hover:shadow-md transition-shadow"
+              className="futuristic-card group hover:border-primary/20 transition-all duration-300"
             >
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2">Enterprise</h3>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold">$49</span>
-                  <span className="text-gray-500 ml-2">/month</span>
+              <div className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Enterprise</h3>
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-bold">$199</span>
+                    <span className="text-gray-500 ml-2">/month</span>
+                  </div>
                 </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>All Advanced features</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Team health monitoring</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Dedicated MD consultations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Full API access</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>Custom integrations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="text-primary mr-2 mt-0.5"><Check className="h-4 w-4" /></div>
+                    <span>On-demand clinical support</span>
+                  </li>
+                </ul>
+                <Button variant="outline" fullWidth>
+                  Contact Sales
+                </Button>
               </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>All Premium features</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Team management</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>API access</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Custom integrations</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="text-blue-500 mr-2">✓</div>
-                  <span>Dedicated support</span>
-                </li>
-              </ul>
-              <Button variant="outline" fullWidth>
-                Contact Sales
-              </Button>
+              <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
-        <div className="container-custom">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-90"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1593217188322-1291b42944d1?ixlib=rb-4.0.3')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+        
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection>
-              <h2 className="heading-lg mb-6">
-                Ready to Transform Your Health Journey?
+              <div className="inline-block mb-6 rounded-xl border border-white/20 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
+                <div className="flex items-center space-x-2">
+                  <ShieldCheck className="h-4 w-4" />
+                  <span>Preventive Health Revolution</span>
+                </div>
+              </div>
+              <h2 className="heading-lg mb-6 text-white">
+                Stop Reacting to Health Issues.<br />Start Preventing Them.
               </h2>
-              <p className="text-lg text-blue-50 mb-8 max-w-2xl mx-auto">
-                Join thousands of users who are taking control of their health with our comprehensive monitoring platform.
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                Join thousands using neural health monitoring to predict and prevent health issues before they begin.
               </p>
-              <Button 
-                size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 shadow-lg"
-              >
-                Get Started Today
-              </Button>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-primary hover:bg-white/90"
+                  glow
+                >
+                  Start Prevention Now
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="text-white border-white/30 hover:bg-white/10"
+                >
+                  Book a Demo
+                </Button>
+              </div>
             </AnimatedSection>
           </div>
         </div>
