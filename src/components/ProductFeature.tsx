@@ -38,16 +38,20 @@ const features = [
 
 const ProductFeature: React.FC = () => {
   return (
-    <section id="features" className="py-20 md:py-28 bg-gradient-to-b from-white to-secondary/50">
+    <section id="features" className="py-20 md:py-28 bg-gradient-to-b from-background to-secondary/20 relative grid-bg">
+      {/* Cyber lines for futuristic feel */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+      
       <div className="container-custom">
         <AnimatedSection className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="badge bg-accent/10 text-accent mb-4 backdrop-blur-sm">
+          <div className="badge bg-accent/20 text-accent mb-4 backdrop-blur-sm border border-accent/10">
             Predictive Technology
           </div>
           <h2 className="heading-xl mb-6">
             Advanced <span className="text-primary">Preventive</span> Health System
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Our AI-driven platform identifies potential health issues weeks before symptoms develop, giving you time to take preventive action.
           </p>
         </AnimatedSection>
@@ -57,16 +61,16 @@ const ProductFeature: React.FC = () => {
             <AnimatedSection 
               key={index} 
               delay={index % 3 === 0 ? 'none' : (index % 3 === 1 ? '200' : '400')}
-              className="futuristic-card group"
+              className="futuristic-card group glow-effect"
             >
               <div className="p-6">
-                <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-4 shadow-sm group-hover:bg-primary/5 transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-4 shadow-sm group-hover:bg-primary/10 transition-colors border border-white/5">
                   {feature.icon}
                 </div>
                 <h3 className="heading-sm mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </div>
-              <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+              <div className="cyber-line"></div>
             </AnimatedSection>
           ))}
         </div>

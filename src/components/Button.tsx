@@ -22,9 +22,9 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary/90 shadow-sm',
-    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-    outline: 'border border-input bg-background/50 backdrop-blur-sm hover:bg-accent/10 hover:text-accent-foreground transition-colors',
+    primary: 'bg-primary text-white hover:bg-primary/90 shadow-sm relative overflow-hidden',
+    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm',
+    outline: 'border border-white/10 bg-background/50 backdrop-blur-sm hover:bg-accent/10 hover:text-accent-foreground transition-colors',
     ghost: 'hover:bg-accent/10 hover:text-accent-foreground',
     accent: 'bg-accent text-white hover:bg-accent/90 shadow-sm'
   };
@@ -47,6 +47,22 @@ const Button: React.FC<ButtonProps> = ({
       )}
       {...props}
     >
+      {/* Optional glowing border effect for primary and accent buttons */}
+      {(variant === 'primary' || variant === 'accent') && (
+        <span className="absolute inset-0 overflow-hidden rounded-xl">
+          <span className="absolute inset-0 rounded-xl opacity-20" 
+            style={{
+              background: `linear-gradient(90deg, 
+                transparent, 
+                ${variant === 'primary' ? 'rgba(80, 100, 240, 0.8)' : 'rgba(130, 90, 240, 0.8)'}, 
+                transparent)`,
+              width: '50%',
+              top: 0,
+              animation: 'shine 3s infinite',
+            }} 
+          />
+        </span>
+      )}
       <span>{children}</span>
       {withArrow && <ArrowRight className="ml-2 h-4 w-4" />}
     </button>
