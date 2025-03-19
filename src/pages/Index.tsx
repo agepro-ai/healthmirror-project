@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -8,7 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
 import Button from '@/components/Button';
-import { Check, ShieldCheck } from 'lucide-react';
+import { Check, ShieldCheck, TrendingUp, Zap, Users } from 'lucide-react';
 
 const Index = () => {
   // Smooth scrolling for anchor links
@@ -39,12 +38,60 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      
+      {/* Why This Pivot Section */}
+      <section className="py-20 md:py-24 bg-gradient-to-b from-background to-background/80 relative">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container-custom relative z-10">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-xs font-medium border border-primary/20 rounded-full bg-primary/5 text-primary">
+              Our Vision
+            </div>
+            <h2 className="heading-lg mb-6">
+              Why This <span className="text-primary">Pivot</span>?
+            </h2>
+          </AnimatedSection>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <AnimatedSection delay="none" className="bg-secondary/20 p-6 rounded-lg border border-white/5">
+              <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center mb-5">
+                <Users className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Larger Market Opportunity</h3>
+              <p className="text-muted-foreground text-sm">
+                India has 450M+ individuals in the longevity and wellness space. Our focus is on the top 5% (24.65M individuals, 5.55M households) who actively seek high-quality, preventive healthcare.
+              </p>
+            </AnimatedSection>
+            
+            <AnimatedSection delay="200" className="bg-secondary/20 p-6 rounded-lg border border-white/5">
+              <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center mb-5">
+                <Zap className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Scalable & Tech-Driven</h3>
+              <p className="text-muted-foreground text-sm">
+                The market exceeds $100B, and our model is AI-powered, asset-light, and globally scalable.
+              </p>
+            </AnimatedSection>
+            
+            <AnimatedSection delay="400" className="bg-secondary/20 p-6 rounded-lg border border-white/5">
+              <div className="w-12 h-12 bg-primary/10 rounded-md flex items-center justify-center mb-5">
+                <TrendingUp className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">From Reactive to Proactive</h3>
+              <p className="text-muted-foreground text-sm">
+                Moving beyond treatment to continuous health monitoring, predictive risk detection, and personalized interventions.
+              </p>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+      
       <ProductFeature />
       <InfoSection />
       <Testimonials />
       
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 md:py-28 bg-gradient-to-b from-white to-secondary/50">
+      <section id="pricing" className="py-20 md:py-28 bg-gradient-to-b from-background to-secondary/10">
         <div className="container-custom">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
             <div className="badge bg-accent/10 text-accent mb-4 backdrop-blur-sm">

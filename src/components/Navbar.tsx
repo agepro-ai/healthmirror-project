@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="text-xl font-bold">HealthMirror</a>
+            <a href="#" className="text-xl font-bold">agepro.in</a>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -45,13 +45,13 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="hidden md:block">
-            <Button>Get Started</Button>
+            <Button variant="outline">Get Started</Button>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 focus:outline-none"
+              className="text-foreground focus:outline-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
